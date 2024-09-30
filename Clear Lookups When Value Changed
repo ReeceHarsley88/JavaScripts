@@ -1,6 +1,9 @@
+// Levels 1,2,3 & 4 are cascading lookups starting with 1 at the top level, if a user has selected a level 1, 2 and 3 then clears the level 2, it will also clear the level 3. 
+// This helps prevent an erorr where somone could select lookups that are not related.
+
 function clearPwrsmtLevels(changedField, formContext) {
-    const fieldsToCheck = ['pwrsmt_level1', 'pwrsmt_level2', 'pwrsmt_level3'];
-    const allFields = ['pwrsmt_level1', 'pwrsmt_level2', 'pwrsmt_level3', 'pwrsmt_level4'];
+    const fieldsToCheck = ['pwrsmt_level1', 'pwrsmt_level2', 'pwrsmt_level3']; // Logical names of the columns (fields) you want to monitor for changes
+    const allFields = ['pwrsmt_level1', 'pwrsmt_level2', 'pwrsmt_level3', 'pwrsmt_level4']; // List all the fields that are part of the set of filtered lookups
     
     const changedFieldIndex = fieldsToCheck.indexOf(changedField);
     
